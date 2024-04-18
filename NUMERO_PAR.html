@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par o impar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .par {
+            color: green;
+        }
+        .impar {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Par o impar</h1>
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" required>
+        <button onclick="determinarParImpar()">Determinar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para determinar si el número es par o impar
+        function determinarParImpar() {
+            // Obtener el número ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value);
+
+            // Determinar si el número es par o impar
+            if (numero % 2 === 0) {
+                document.getElementById("resultado").innerHTML = "<p class='par'>El número es par.</p>";
+            } else {
+                document.getElementById("resultado").innerHTML = "<p class='impar'>El número es impar.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
+

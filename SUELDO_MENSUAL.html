@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de sueldo anual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de sueldo anual</h1>
+        <label for="sueldo">Sueldo mensual:</label>
+        <input type="number" id="sueldo" step="0.01" required><br>
+        <button onclick="calcularSueldoAnual()">Calcular sueldo anual</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para calcular el sueldo neto anual
+        function calcularSueldoAnual() {
+            // Obtener el sueldo mensual ingresado por el usuario
+            var sueldoMensual = parseFloat(document.getElementById("sueldo").value);
+
+            // Calcular el sueldo anual
+            var sueldoAnual = sueldoMensual * 12;
+
+            // Verificar si el sueldo anual supera los $30,000 para aplicar el impuesto
+            if (sueldoAnual > 30000) {
+                var excedente = sueldoAnual - 30000;
+                var impuesto = excedente * 0.15;
+                var sueldoNetoAnual = sueldoAnual - impuesto;
+                document.getElementById("resultado").innerHTML = "<p>Sueldo anual: $" + sueldoAnual.toFixed(2) + "<br>Impuesto aplicado: $" + impuesto.toFixed(2) + "<br>Sueldo neto anual: $" + sueldoNetoAnual.toFixed(2) + "</p>";
+            } else {
+                document.getElementById("resultado").innerHTML = "<p>Sueldo anual: $" + sueldoAnual.toFixed(2) + "</p>";
+            }
+        }
+    </script>
+</body>
+</html>

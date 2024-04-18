@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de nombres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .igual {
+            color: green;
+        }
+        .mayor {
+            color: blue;
+        }
+        .menor {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparación de nombres</h1>
+        <label for="nombre1">Ingresa el primer nombre:</label>
+        <input type="text" id="nombre1" required><br><br>
+        <label for="nombre2">Ingresa el segundo nombre:</label>
+        <input type="text" id="nombre2" required><br><br>
+        <button onclick="compararNombres()">Comparar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para comparar los nombres
+        function compararNombres() {
+            // Obtener los nombres ingresados por el usuario
+            var nombre1 = document.getElementById("nombre1").value;
+            var nombre2 = document.getElementById("nombre2").value;
+
+            // Comparar los nombres
+            if (nombre1 === nombre2) {
+                document.getElementById("resultado").innerHTML = "<p class='igual'>Los nombres son iguales.</p>";
+            } else if (nombre1 > nombre2) {
+                document.getElementById("resultado").innerHTML = "<p class='mayor'>" + nombre1 + " es mayor que " + nombre2 + ".</p>";
+            } else {
+                document.getElementById("resultado").innerHTML = "<p class='menor'>" + nombre1 + " es menor que " + nombre2 + ".</p>";
+            }
+        }
+    </script>
+</body>
+</html>

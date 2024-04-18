@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación con 100</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .mayor {
+            color: green;
+        }
+        .menor {
+            color: red;
+        }
+        .igual {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparación con 100</h1>
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" required><br><br>
+        <button onclick="compararNumero()">Comparar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para comparar el número con 100
+        function compararNumero() {
+            // Obtener el número ingresado por el usuario
+            var numero = parseFloat(document.getElementById("numero").value);
+
+            // Comparar el número con 100
+            if (numero > 100) {
+                document.getElementById("resultado").innerHTML = "<p class='mayor'>El número es mayor que 100.</p>";
+            } else if (numero < 100) {
+                document.getElementById("resultado").innerHTML = "<p class='menor'>El número es menor que 100.</p>";
+            } else {
+                document.getElementById("resultado").innerHTML = "<p class='igual'>El número es igual a 100.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

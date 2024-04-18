@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número de un solo dígito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .un-digito {
+            color: green;
+        }
+        .mas-digito {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Número de un solo dígito</h1>
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" required><br><br>
+        <button onclick="verificarUnDigito()">Verificar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para verificar si el número tiene un solo dígito
+        function verificarUnDigito() {
+            // Obtener el número ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value);
+
+            // Verificar si el número tiene un solo dígito
+            if (numero >= 0 && numero <= 9) {
+                document.getElementById("resultado").innerHTML = "<p class='un-digito'>El número es de un solo dígito.</p>";
+            } else {
+                document.getElementById("resultado").innerHTML = "<p class='mas-digito'>El número no es de un solo dígito.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

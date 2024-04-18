@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de elementos en un arreglo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparación de elementos en un arreglo</h1>
+        <button onclick="compararElementos()">Comparar elementos</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para comparar elementos en un arreglo
+        function compararElementos() {
+            // Definir el arreglo de 5 elementos (puedes modificar los valores según tu necesidad)
+            var arreglo = [10, 20, 30, 40, 50];
+
+            // Obtener el primer y último elemento del arreglo
+            var primerElemento = arreglo[0];
+            var ultimoElemento = arreglo[arreglo.length - 1];
+
+            // Comparar los elementos
+            var resultado;
+            if (primerElemento > ultimoElemento) {
+                resultado = "El primer elemento es mayor que el último elemento.";
+            } else if (primerElemento < ultimoElemento) {
+                resultado = "El primer elemento es menor que el último elemento.";
+            } else {
+                resultado = "El primer elemento es igual al último elemento.";
+            }
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = "<p>" + resultado + "</p>";
+        }
+    </script>
+</body>
+</html>

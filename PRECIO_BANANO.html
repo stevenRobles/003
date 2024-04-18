@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de ganancia por venta de banano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de ganancia por venta de banano</h1>
+        <label for="tipoA">Tipo A:</label>
+        <input type="radio" id="tipoA" name="tipo" value="A" checked>
+        <label for="tipoB">Tipo B:</label>
+        <input type="radio" id="tipoB" name="tipo" value="B"><br>
+        <label for="tamano1">Tamaño 1:</label>
+        <input type="radio" id="tamano1" name="tamano" value="1" checked>
+        <label for="tamano2">Tamaño 2:</label>
+        <input type="radio" id="tamano2" name="tamano" value="2"><br>
+        <button onclick="calcularGanancia()">Calcular ganancia</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para calcular la ganancia por venta de banano
+        function calcularGanancia() {
+            // Obtener el tipo y tamaño seleccionados por el usuario
+            var tipo = document.querySelector('input[name="tipo"]:checked').value;
+            var tamano = document.querySelector('input[name="tamano"]:checked').value;
+
+            // Inicializar el precio base y el ajuste de precio según el tipo y tamaño
+            var precioBase = 10; // Precio base por kilo de banano
+            var ajustePrecio = 0;
+
+            // Calcular el ajuste de precio según el tipo y tamaño seleccionados
+            if (tipo === 'A') {
+                if (tamano === '1') {
+                    ajustePrecio = 2; // Se le cargan $2 al precio inicial
+                } else {
+                    ajustePrecio = 3; // Se le cargan $3 al precio inicial
+                }
+            } else {
+                if (tamano === '1') {
+                    ajustePrecio = -3; // Se rebajan $3 al precio inicial
+                } else {
+                    ajustePrecio = -5; // Se rebajan $5 al precio inicial
+                }
+            }
+
+            // Calcular el precio final por kilo de banano
+            var precioFinal = precioBase + ajustePrecio;
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = "<p>Ganancia por kilo de banano: $" + precioFinal.toFixed(2) + "</p>";
+        }
+    </script>
+</body>
+</html>

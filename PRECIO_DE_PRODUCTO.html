@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de descuento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de descuento</h1>
+        <label for="precio">Precio del producto:</label>
+        <input type="number" id="precio" step="0.01" required><br>
+        <label for="descuento">Porcentaje de descuento:</label>
+        <input type="number" id="descuento" step="0.01" required><br>
+        <button onclick="calcularPrecioFinal()">Calcular precio final</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para calcular el precio final después del descuento
+        function calcularPrecioFinal() {
+            // Obtener el precio del producto y el porcentaje de descuento ingresados por el usuario
+            var precio = parseFloat(document.getElementById("precio").value);
+            var descuento = parseFloat(document.getElementById("descuento").value);
+
+            // Calcular el precio final después del descuento
+            var precioFinal = precio - (precio * (descuento / 100));
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = "<p>Precio final después del descuento: $" + precioFinal.toFixed(2) + "</p>";
+        }
+    </script>
+</body>
+</html>

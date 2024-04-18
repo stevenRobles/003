@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de factura con IVA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de factura con IVA</h1>
+        <label for="monto">Monto total de la factura:</label>
+        <input type="number" id="monto" step="0.01" required><br>
+        <label for="iva">Porcentaje de IVA aplicado:</label>
+        <input type="number" id="iva" step="0.01" required><br>
+        <button onclick="calcularTotal()">Calcular total</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Función para calcular el monto total incluyendo el IVA
+        function calcularTotal() {
+            // Obtener el monto total y el porcentaje de IVA ingresados por el usuario
+            var monto = parseFloat(document.getElementById("monto").value);
+            var iva = parseFloat(document.getElementById("iva").value);
+
+            // Calcular el monto total incluyendo el IVA
+            var total = monto * (1 + iva / 100);
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = "<p>Monto total a pagar: $" + total.toFixed(2) + "</p>";
+        }
+    </script>
+</body>
+</html>
