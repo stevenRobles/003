@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #tabla {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabla de multiplicar</h1>
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" required>
+        <button onclick="mostrarTabla()">Mostrar tabla</button>
+        <div id="tabla"></div>
+    </div>
+
+    <script>
+        function mostrarTabla() {
+            // Obtener el número ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value);
+
+            // Construir la tabla de multiplicar
+            var tabla = "<h2>Tabla de multiplicar del " + numero + ":</h2>";
+            for (var i = 1; i <= 10; i++) {
+                tabla += numero + " x " + i + " = " + (numero * i) + "<br>";
+            }
+
+            // Mostrar la tabla en la pantalla
+            document.getElementById("tabla").innerHTML = tabla;
+        }
+    </script>
+</body>
+</html>

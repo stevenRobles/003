@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.01">
+    <title>Suma de dos números</title>
+</head>
+<body>
+    <h1>Suma de dos números</h1>
+    <script>
+        // Pedir al usuario que ingrese el primer número
+        var numero1 = prompt("Por favor, ingresa el primer número:");
+        
+        // Convertir el valor ingresado a un número
+        numero1 = parseFloat(numero1);
+        
+        // Pedir al usuario que ingrese el segundo número
+        var numero2 = prompt("Por favor, ingresa el segundo número:");
+        
+        // Convertir el valor ingresado a un número
+        numero2 = parseFloat(numero2);
+        
+        // Verificar si los valores ingresados son números válidos
+        if (!isNaN(numero1) && !isNaN(numero2)) {
+            // Calcular la suma de los dos números
+            var suma = numero1 + numero2;
+            
+            // Mostrar la suma al usuario
+            alert("La suma de " + numero1 + " y " + numero2 + " es: " + suma);
+        } else {
+            // Mostrar un mensaje de error si alguno de los valores no es un número válido
+            alert("Por favor, ingresa números válidos.");
+        }
+    </script>
+</body>
+</html>

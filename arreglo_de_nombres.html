@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentar nombres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #nombres {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Presentar nombres</h1>
+        <div id="nombres"></div>
+    </div>
+
+    <script>
+        // Arreglo de nombres
+        var nombres = ["Juan", "María", "Pedro", "Ana", "Carlos"];
+
+        // Función para presentar los nombres
+        function presentarNombres() {
+            // Obtener el contenedor donde se mostrarán los nombres
+            var contenedor = document.getElementById("nombres");
+
+            // Crear una lista ordenada
+            var lista = document.createElement("ol");
+
+            // Iterar sobre los nombres y crear elementos de lista para cada uno
+            nombres.forEach(function(nombre) {
+                var item = document.createElement("li");
+                item.textContent = nombre;
+                lista.appendChild(item);
+            });
+
+            // Agregar la lista al contenedor
+            contenedor.appendChild(lista);
+        }
+
+        // Llamar a la función para presentar los nombres al cargar la página
+        window.onload = presentarNombres;
+    </script>
+</body>
+</html>
+
