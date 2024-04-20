@@ -1,56 +1,58 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encontrar el mayor de tres elementos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #f0f0f0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Encontrar el mayor de tres elementos</h1>
-        <button onclick="encontrarMayor()">Encontrar mayor</button>
-        <div id="resultado"></div>
-    </div>
+//21:Dado un arreglo de 3 elementos indicar cuál de los elementos es el mayor.
 
-    <script>
-        // Función para encontrar el mayor de tres elementos en un arreglo
-        function encontrarMayor() {
-            // Definir el arreglo de 3 elementos (puedes modificar los valores según tu necesidad)
-            var arreglo = [15, 7, 21];
+// Analisis de requerimentos:
 
-            // Encontrar el mayor elemento del arreglo
-            var mayor = Math.max.apply(null, arreglo);
+// los datos o variables del problema
 
-            // Mostrar el resultado
-            document.getElementById("resultado").innerHTML = "<p>El mayor elemento del arreglo es: " + mayor + "</p>";
+// Entrada: arreglo (con 3 elementos)
+
+(comparación)
+
+// Los calculos o procesos que se hacen con las variables:
+
+// Proceso: 
+//    Obtener el máximo de los tres elementos del arreglo
+
+// Salida: el valor del elemento máximo
+
+// Seudocódigo:
+
+// Algoritmo encontrarMayorElemento
+
+//    Declarar arreglo (con 3 elementos)
+//    Escribir "Ingrese 3 elementos para el arreglo: "
+//    Leer arreglo
+
+//    mayorElemento = arreglo[0]
+//    Para cada elemento en el arreglo, comenzando desde el segundo elemento:
+//        Si elemento > mayorElemento entonces
+//            mayorElemento = elemento
+//        FinSi
+//    FinPara
+
+//    Escribir "El mayor elemento es: " + mayorElemento
+
+// FinAlgoritmo
+
+const read = require('prompt-sync')();
+const write = console.log;
+
+function encontrarMayorElemento(){
+    let arreglo = [];
+
+    write("Ingrese 3 elementos para el arreglo: ");
+    for (let i = 0; i < 3; i++) {
+        arreglo[i] = parseFloat(read(`Elemento ${i+1}: `));
+    }
+
+    let mayorElemento = arreglo[0];
+    for (let i = 1; i < arreglo.length; i++) {
+        if (arreglo[i] > mayorElemento) {
+            mayorElemento = arreglo[i];
         }
-    </script>
-</body>
-</html>
+    }
+
+    write("El mayor elemento es: " + mayorElemento);
+}
+
+encontrarMayorElemento();
