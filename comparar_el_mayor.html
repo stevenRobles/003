@@ -1,86 +1,77 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar el número mayor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Mostrar el número mayor</h1>
-        <label for="numero1">Ingresa el primer número:</label>
-        <input type="number" id="numero1" required>
-        <label for="numero2">Ingresa el segundo número:</label>
-        <input type="number" id="numero2" required>
-        <button onclick="mostrarMayor()">Mostrar mayor</button>
-        <div id="resultado"></div>
-    </div>
+//10:Pedir al usuario dos números y mostrar el mayor.
 
-    <script>
-        function mostrarMayor() {
-            // Obtener los números ingresados por el usuario
-            var numero1 = parseFloat(document.getElementById("numero1").value);
-            var numero2 = parseFloat(document.getElementById("numero2").value);
+// Analisis de requerimentos:
 
-            // Determinar el número mayor
-            var mayor = Math.max(numero1, numero2);
+// los datos o variables del problema
 
-            // Mostrar el resultado
-            document.getElementById("resultado").innerHTML = "El número mayor es: " + mayor;
-        }
-    </script>
-</body>
-</html>
+// Entrada: numero1=0, numero2=0
+
+(leer), comparacion (proceso)
+
+// Los calculos o procesos que se hacen con las
+
+variables
+
+// Proceso: comparar numero1 y numero2 para determinar el mayor
+
+// La informacion de las variables procesadas
+
+// Salida: mayor
+
+// Seupdocodigo:
+
+// Algoritmo encontrarMayor
+
+// declarar
+
+numero1=0, numero2=0, mayor=0
+
+// Escribir "Ingrese el primer número" /
+
+// Leer numero1
+
+// Escribir "Ingrese el segundo número" /
+
+// Leer numero2
+
+// Si numero1 es mayor que numero2 entonces
+
+//    mayor = numero1
+
+// De lo contrario
+
+//    mayor = numero2
+
+// FinSi
+
+// Escribir "El número mayor es: " + mayor
+
+// FinAlgoritmo
+
+const read = require('prompt-sync')();
+
+const write = console.log
+
+// se crea la función
+
+function encontrarMayor(){
+
+    let numero1=0, numero2=0, mayor=0
+
+    numero1 = parseFloat(read("Ingrese el primer número:"))
+
+    numero2 = parseFloat(read("Ingrese el segundo número:"))
+
+    if (numero1 > numero2) {
+        mayor = numero1;
+    } else {
+        mayor = numero2;
+    }
+
+    write("El número mayor es: " + mayor)
+
+}
+
+// se llama o se ejecuta la función
+
+encontrarMayor()

@@ -1,91 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asignar números a un arreglo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Asignar números a un arreglo</h1>
-        <label>Ingresa 5 números:</label>
-        <input type="number" id="numero1" required>
-        <input type="number" id="numero2" required>
-        <input type="number" id="numero3" required>
-        <input type="number" id="numero4" required>
-        <input type="number" id="numero5" required>
-        <button onclick="crearArreglo()">Crear arreglo</button>
-        <div id="resultado"></div>
-    </div>
+//12:Pedir 5 números y asignarlos en un arreglo.
 
-    <script>
-        function crearArreglo() {
-            // Obtener los números ingresados por el usuario
-            var numero1 = parseFloat(document.getElementById("numero1").value);
-            var numero2 = parseFloat(document.getElementById("numero2").value);
-            var numero3 = parseFloat(document.getElementById("numero3").value);
-            var numero4 = parseFloat(document.getElementById("numero4").value);
-            var numero5 = parseFloat(document.getElementById("numero5").value);
+// Analisis de requerimentos:
 
-            // Crear el arreglo con los números
-            var arreglo = [numero1, numero2, numero3, numero4, numero5];
+// los datos o variables del problema
 
-            // Mostrar el arreglo en la pantalla
-            document.getElementById("resultado").innerHTML = "El arreglo creado es: [" + arreglo.join(", ") + "]";
-        }
-    </script>
-</body>
-</html>
+// Entrada: numeros=[0,0,0,0,0]
+
+(leer), asignación (proceso)
+
+// Los calculos o procesos que se hacen con las
+
+variables
+
+// Proceso: leer 5 números y asignarlos a un arreglo
+
+// La informacion de las variables procesadas
+
+// Salida: arreglo de números
+
+// Seupdocodigo:
+
+// Algoritmo asignarNumerosEnArreglo
+
+// declarar
+
+numeros=[0,0,0,0,0]
+
+// Para i desde 0 hasta 4 hacer
+
+//    Escribir "Ingrese el número " + (i + 1) /
+
+//    Leer numeros[i]
+
+// FinPara
+
+// Escribir "Los números ingresados son: " + numeros
+
+// FinAlgoritmo
+
+const read = require('prompt-sync')();
+
+const write = console.log
+
+// se crea la función
+
+function asignarNumerosEnArreglo(){
+
+    let numeros = [];
+
+    for (let i = 0; i < 5; i++) {
+        numeros.push(parseFloat(read(`Ingrese el número ${i + 1}: `)));
+    }
+
+    write("Los números ingresados son: " + numeros);
+
+}
+
+// se llama o se ejecuta la función
+
+asignarNumerosEnArreglo();

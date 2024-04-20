@@ -1,84 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambiar valores del primer y último elemento</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        #elementos {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            list-style-type: none;
-            padding-left: 0;
-        }
-        #elementos li {
-            margin-bottom: 10px;
-        }
-        #elementos li:first-child {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Cambiar valores del primer y último elemento</h1>
-        <ul id="elementos"></ul>
-        <button onclick="cambiarValores()">Cambiar valores</button>
-    </div>
+//15:Dado un arreglo de 5 elementos, cambiar los valores el primer y último elemento entre sí.
 
-    <script>
-        // Arreglo de elementos
-        var elementos = ["Elemento1", "Elemento2", "Elemento3", "Elemento4", "Elemento5"];
+// Analisis de requerimentos:
 
-        // Función para cambiar los valores del primer y último elemento
-        function cambiarValores() {
-            // Intercambiar los valores del primer y último elemento
-            var temp = elementos[0];
-            elementos[0] = elementos[elementos.length - 1];
-            elementos[elementos.length - 1] = temp;
+// los datos o variables del problema
 
-            // Volver a presentar los elementos
-            presentarElementos();
-        }
+// Entrada: arreglo=[0,0,0,0,0]
 
-        // Función para presentar los elementos
-        function presentarElementos() {
-            // Obtener el contenedor donde se mostrarán los elementos
-            var contenedor = document.getElementById("elementos");
-            contenedor.innerHTML = "";
+(arreglo dado)
 
-            // Mostrar los elementos en la lista
-            elementos.forEach(function(elemento) {
-                var li = document.createElement("li");
-                li.textContent = elemento;
-                contenedor.appendChild(li);
-            });
-        }
+// Los calculos o procesos que se hacen con las
 
-        // Llamar a la función para presentar los elementos al cargar la página
-        window.onload = presentarElementos;
-    </script>
-</body>
-</html>
+variables
+
+// Proceso: intercambiar los valores del primer y último elemento del arreglo
+
+// La informacion de las variables procesadas
+
+// Salida: arreglo modificado
+
+// Seupdocodigo:
+
+// Algoritmo intercambiarElementos
+
+// declarar
+
+arreglo=[60,70,80,90,100]
+
+// Escribir "Arreglo original: " + arreglo
+
+// Intercambiar los valores del primer y último elemento
+
+//    temp = arreglo[0]
+
+//    arreglo[0] = arreglo[longitud del arreglo - 1]
+
+//    arreglo[longitud del arreglo - 1] = temp
+
+// Escribir "Arreglo modificado: " + arreglo
+
+// FinAlgoritmo
+
+const arreglo = [60, 70, 80, 90, 100]; // Arreglo con los valores dados
+
+const write = console.log;
+
+// se crea la función
+
+function intercambiarElementos(){
+
+    const longitud = arreglo.length;
+
+    write("Arreglo original: " + arreglo);
+
+    // Intercambiar los valores del primer y último elemento
+    const temp = arreglo[0];
+    arreglo[0] = arreglo[longitud - 1];
+    arreglo[longitud - 1] = temp;
+
+    write("Arreglo modificado: " + arreglo);
+}
+
+// se llama o se ejecuta la función
+
+intercambiarElementos();

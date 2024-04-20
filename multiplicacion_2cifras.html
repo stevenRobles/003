@@ -1,86 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplicación de dos números</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Multiplicación de dos números</h1>
-        <label for="numero1">Ingresa el primer número:</label>
-        <input type="number" id="numero1" required>
-        <label for="numero2">Ingresa el segundo número:</label>
-        <input type="number" id="numero2" required>
-        <button onclick="calcularMultiplicacion()">Calcular</button>
-        <div id="resultado"></div>
-    </div>
+//6:Pedir al usuario dos números y mostrar el resultado de multiplicarlos.
 
-    <script>
-        function calcularMultiplicacion() {
-            // Obtener los números ingresados por el usuario
-            var numero1 = parseFloat(document.getElementById("numero1").value);
-            var numero2 = parseFloat(document.getElementById("numero2").value);
+// Analisis de requerimentos:
 
-            // Calcular la multiplicación de los números
-            var resultado = numero1 * numero2;
+// los datos o variables del problema
 
-            // Mostrar el resultado de la multiplicación
-            document.getElementById("resultado").innerHTML = "El resultado de la multiplicación es: " + resultado;
-        }
-    </script>
-</body>
-</html>
+// Entrada: numero1=0, numero2=0
+
+(leer), multiplicacion (proceso)
+
+// Los calculos o procesos que se hacen con las
+
+variables
+
+// Proceso: multiplicar numero1 y numero2
+
+// La informacion de las variables procesadas
+
+// Salida: multiplicacion
+
+// Seupdocodigo:
+
+// Algoritmo multiplicarNumeros
+
+// declarar
+
+numero1=0, numero2=0, multiplicacion=0
+
+// Escribir "Ingrese primer número" /
+
+// Leer numero1
+
+// Escribir "Ingrese segundo número" /
+
+// Leer numero2
+
+multiplicacion = numero1 * numero2
+
+// Escribir multiplicacion
+
+// FinAlgoritmo
+
+const read = require('prompt-sync')();
+
+const write = console.log
+
+// se crea la función
+
+function multiplicarNumeros(){
+
+    let numero1=0, numero2=0, multiplicacion=0
+
+    numero1 = parseFloat(read("Ingrese primer número:"))
+
+    numero2 = parseFloat(read("Ingrese segundo número:"))
+
+    multiplicacion = numero1 * numero2
+
+    write("El resultado de multiplicar los dos números es: " + multiplicacion)
+
+}
+
+// se llama o se ejecuta la función
+
+multiplicarNumeros()

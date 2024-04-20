@@ -1,77 +1,63 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentar elementos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        #elementos {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            list-style-type: none;
-            padding-left: 0;
-        }
-        #elementos li {
-            margin-bottom: 10px;
-        }
-        #elementos li:first-child {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Presentar elementos</h1>
-        <ul id="elementos"></ul>
-    </div>
+//14:Dado un arreglo de 5 elementos, presentar el primero, el del medio y el último.
 
-    <script>
-        // Arreglo de elementos
-        var elementos = ["Elemento1", "Elemento2", "Elemento3", "Elemento4", "Elemento5"];
+// Analisis de requerimentos:
 
-        // Función para presentar el primer, el del medio y el último elemento
-        function presentarElementos() {
-            // Obtener el contenedor donde se mostrarán los elementos
-            var contenedor = document.getElementById("elementos");
+// los datos o variables del problema
 
-            // Crear elementos de lista para el primer, el del medio y el último elemento
-            var primerElemento = document.createElement("li");
-            primerElemento.textContent = "Primer elemento: " + elementos[0];
-            contenedor.appendChild(primerElemento);
+// Entrada: arreglo=[0,0,0,0,0]
 
-            var elementoDelMedio = document.createElement("li");
-            elementoDelMedio.textContent = "Elemento del medio: " + elementos[Math.floor(elementos.length / 2)];
-            contenedor.appendChild(elementoDelMedio);
+(arreglo dado)
 
-            var ultimoElemento = document.createElement("li");
-            ultimoElemento.textContent = "Último elemento: " + elementos[elementos.length - 1];
-            contenedor.appendChild(ultimoElemento);
-        }
+// Los calculos o procesos que se hacen con las
 
-        // Llamar a la función para presentar los elementos al cargar la página
-        window.onload = presentarElementos;
-    </script>
-</body>
-</html>
+variables
+
+// Proceso: presentar el primer elemento, el del medio y el último del arreglo
+
+// La informacion de las variables procesadas
+
+// Salida: elementos del arreglo
+
+// Seupdocodigo:
+
+// Algoritmo presentarElementos
+
+// declarar
+
+arreglo=[10,20,30,40,50]
+
+// Escribir "El primer elemento es: " + arreglo[0]
+
+// Calcular el indice del elemento del medio
+
+//    medio = longitud del arreglo dividido por 2 (asumiendo que la longitud del arreglo es siempre 5)
+
+// Escribir "El elemento del medio es: " + arreglo[medio]
+
+// Escribir "El último elemento es: " + arreglo[longitud del arreglo - 1]
+
+// FinAlgoritmo
+
+const arreglo = [10, 20, 30, 40, 50]; // Arreglo con los valores dados
+
+const write = console.log;
+
+// se crea la función
+
+function presentarElementos(){
+
+    const longitud = arreglo.length;
+
+    const medio = Math.floor(longitud / 2); // Índice del elemento del medio
+
+    write("El primer elemento es: " + arreglo[0]);
+
+    write("El elemento del medio es: " + arreglo[medio]);
+
+    write("El último elemento es: " + arreglo[longitud - 1]);
+
+}
+
+// se llama o se ejecuta la función
+
+presentarElementos();

@@ -1,86 +1,70 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de multiplicar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #tabla {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Tabla de multiplicar</h1>
-        <label for="numero">Ingresa un número:</label>
-        <input type="number" id="numero" required>
-        <button onclick="mostrarTabla()">Mostrar tabla</button>
-        <div id="tabla"></div>
-    </div>
+//9:Solicitar al usuario un número y mostrar su tabla de multiplicar del 1 al 10.
 
-    <script>
-        function mostrarTabla() {
-            // Obtener el número ingresado por el usuario
-            var numero = parseInt(document.getElementById("numero").value);
+// Analisis de requerimentos:
 
-            // Construir la tabla de multiplicar
-            var tabla = "<h2>Tabla de multiplicar del " + numero + ":</h2>";
-            for (var i = 1; i <= 10; i++) {
-                tabla += numero + " x " + i + " = " + (numero * i) + "<br>";
-            }
+// los datos o variables del problema
 
-            // Mostrar la tabla en la pantalla
-            document.getElementById("tabla").innerHTML = tabla;
-        }
-    </script>
-</body>
-</html>
+// Entrada: numero=0
+
+(leer), tabla_de_multiplicar (proceso)
+
+// Los calculos o procesos que se hacen con las
+
+variables
+
+// Proceso: calcular la tabla de multiplicar del número ingresado del 1 al 10
+
+// La informacion de las variables procesadas
+
+// Salida: tabla_de_multiplicar
+
+// Seupdocodigo:
+
+// Algoritmo mostrarTablaDeMultiplicar
+
+// declarar
+
+numero=0, tabla_de_multiplicar=""
+
+// Escribir "Ingrese un número" /
+
+// Leer numero
+
+// Calcular la tabla de multiplicar del número ingresado del 1 al 10
+
+// Escribir "Tabla de multiplicar del " + numero + ":\n"
+
+// Para i desde 1 hasta 10 hacer
+
+//    tabla_de_multiplicar = tabla_de_multiplicar + numero + " x " + i + " = " + (numero * i) + "\n"
+
+// FinPara
+
+// Escribir tabla_de_multiplicar
+
+// FinAlgoritmo
+
+const read = require('prompt-sync')();
+
+const write = console.log
+
+// se crea la función
+
+function mostrarTablaDeMultiplicar(){
+
+    let numero=0, tabla_de_multiplicar=""
+
+    numero = parseInt(read("Ingrese un número:"))
+
+    write("Tabla de multiplicar del " + numero + ":")
+
+    for (let i = 1; i <= 10; i++) {
+        tabla_de_multiplicar += `${numero} x ${i} = ${numero * i}\n`;
+    }
+
+    write(tabla_de_multiplicar)
+}
+
+// se llama o se ejecuta la función
+
+mostrarTablaDeMultiplicar()
