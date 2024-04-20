@@ -1,88 +1,71 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concatenar palabras</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Concatenar palabras</h1>
-        <form onsubmit="concatenarPalabras(); return false;">
-            <label for="palabra1">Primera palabra:</label>
-            <input type="text" id="palabra1">
-            <label for="palabra2">Segunda palabra:</label>
-            <input type="text" id="palabra2">
-            <button type="submit">Concatenar</button>
-        </form>
-        <div id="resultado"></div>
-    </div>
+//2.Pedir dos palabras y presentarlas concatenadas
 
-    <script>
-        function concatenarPalabras() {
-            // Obtener las palabras ingresadas por el usuario
-            var palabra1 = document.getElementById("palabra1").value;
-            var palabra2 = document.getElementById("palabra2").value;
+// Analisis de requerimentos:
 
-            // Concatenar las palabras
-            var concatenadas = palabra1 + " " + palabra2;
+// los datos o variables del problema
 
-            // Mostrar el resultado
-            document.getElementById("resultado").innerHTML = "Palabras concatenadas: " + concatenadas;
-        }
-    </script>
-</body>
-</html>
+// Entrada: palabra1="", palabra2=""
+
+(leer), concatenación (proceso)
+
+// Los calculos o procesos que se hacen con las
+
+variables
+
+// Proceso: concatenar palabra1 y palabra2
+
+// La informacion de las variables procesadas
+
+// Salida: concatenación
+
+// Seupdocodigo:
+
+// Algoritmo unir
+
+// declarar
+
+palabra1="", palabra2="", concatenación=""
+
+// Escribir "Ingrese palabra1" /
+
+// Leer palabra1
+
+//
+
+//
+
+//
+
+Escribir "Ingrese palabra2"
+
+Leer palabra2
+
+concatenación = palabra1 + palabra2
+
+// Escribir concatenación
+
+// FinAlgoritmo
+
+const read = require('prompt-sync')();
+
+const write = console.log
+
+// se crea la función
+
+function unir(){
+
+    let palabra1="", palabra2="", concatenación=""
+
+    palabra1 = read("Ingrese palabra1:")
+
+    palabra2 = read("Ingrese palabra2:")
+
+    concatenación = palabra1 + palabra2
+
+    write(concatenación)
+
+}
+
+// se llama o se ejecuta la función
+
+unir()
